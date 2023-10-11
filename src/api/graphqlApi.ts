@@ -33,6 +33,7 @@ export async function executeGraphql<TResult, TVariables>({
 		headers: {
 			...headers,
 			"Content-Type": "application/json",
+			"ngrok-skip-browser-warning": "true",
 		},
 	});
 
