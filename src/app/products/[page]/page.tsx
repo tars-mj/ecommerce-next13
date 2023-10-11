@@ -8,8 +8,8 @@ export async function generateStaticParams() {
 	return pages.map((page) => ({ params: { page: page.toString() } }));
 }
 
-export default async function ProductsPage({ params }: { params: { pageNumber: string } }) {
-	const page = Number(params.pageNumber);
+export default async function ProductsPage({ params }: { params: { page: string } }) {
+	const page = Number(params.page);
 	const maxProducts = 12;
 	const skip = page === 1 ? 0 : page * maxProducts - maxProducts;
 	const products = await getProducts(skip, maxProducts);
